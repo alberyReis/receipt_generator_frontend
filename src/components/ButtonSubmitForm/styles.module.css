@@ -1,0 +1,22 @@
+.subimt {
+    background-color: var(--lightMediumColor);
+    border: none;
+    border-radius: 0.4rem;
+    color: var(--darkColor);
+    display: flex;
+    height: 3rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 100%;
+}
+
+.subimt:hover {
+    cursor: pointer;
+    background-color: var(--mediumColor);
+    transition: 0.2s;
+}
+
+.subimt:active {
+    opacity: 0.6;
+    transform: scale(0.98);
+}

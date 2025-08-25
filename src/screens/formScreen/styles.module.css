@@ -1,0 +1,29 @@
+.container {
+    align-items: center;
+    background-color: var(--darkColor);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.form {
+    align-items: center;
+    color: var(--lightMediumColor);
+    display: flex;
+    justify-content: center;
+}
+
+fieldset {
+    border-radius: 0.6rem;
+    border-width: 0.2rem;
+    padding: 2rem 1rem;
+    width: 1000px;
+}
+
+legend {
+    color: var(--lightMediumColor);
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 0 0.8rem;
+}

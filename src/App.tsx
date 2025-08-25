@@ -1,11 +1,16 @@
-import './App.css';
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import './App.css'
+import { ReceiptScreen } from './screens/ReceiptScreen'
+import { FormScreen } from './screens/formScreen'
 
-function App() {
+export function App() {
   return (
-    <div>
-      <h1>Ready</h1>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<FormScreen />} />
+        <Route path='/receipter' element={<ReceiptScreen />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
-
-export default App;

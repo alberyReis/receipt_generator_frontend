@@ -1,0 +1,21 @@
+.input_form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0 0.8rem 2rem 0.8rem;
+}
+
+.input_form label {
+    color: var(--lightMediumColor);
+    font-size: 1rem;
+}
+
+.input_form input {
+    background-color: var(--darkColor);
+    border: none;
+    outline: none;
+    border-bottom: 0.2rem solid var(--lightMediumColor);
+    font-size: 1.2rem;
+    padding-bottom: 0.2rem;
+}
