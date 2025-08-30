@@ -13,9 +13,22 @@
 
 .input_form input {
     background-color: var(--darkColor);
+    color: var(--lightColor);
     border: none;
     outline: none;
     border-bottom: 0.2rem solid var(--lightMediumColor);
     font-size: 1.2rem;
     padding-bottom: 0.2rem;
+}
+
+.input_form input:-webkit-autofill {
+  background-color: var(--darkColor)!important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--darkColor) inset;
+  -webkit-text-fill-color: var(--lightColor);
+}
+
+.input_form input:-webkit-autofill:focus {
+  background-color: var(--darkColor)!important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--darkColor) inset;
+  -webkit-text-fill-color: var(--lightColor);
 }

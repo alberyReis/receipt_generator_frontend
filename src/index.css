@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+
 :root {
     --darkColor: #012E40;
     --darkMediumColor: #024959;
     --mediumColor: #026773;
     --lightMediumColor: #3CA6A6;
     --lightColor: #F2E3D5;
+    --fontFamilyProject: "Jost", sans-serif;
+    --fontFamilySheet: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Jost", sans-serif;
 }

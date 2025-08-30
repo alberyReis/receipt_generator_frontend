@@ -1,14 +1,26 @@
 import styles from './styles.module.css'
+import type { ChangeEvent } from 'react'
 
-export const InputForm = () => {
+interface IInputForm {
+    id: string
+    label: string
+    type: string
+    placeholder: string
+    value: string | number | undefined
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void
+}
+
+export const InputForm = (props: IInputForm) => {
     return (
         <div className={styles.input_form}>
-            <label htmlFor="nameClient">Nome do Cliente</label>
+            <label htmlFor={props.id}>{props.label}</label>
             <input
-                id='nameClient'
+                id={props.id}
                 className={styles.input}
-                type="text"
-                placeholder='Albery Vieira Reis'
+                type={props.type}
+                placeholder={props.placeholder}
+                value={props.value}
+                onChange={props.onChange}
             />
         </div>
     )

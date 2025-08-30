@@ -2,7 +2,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { ReceiptScreen } from './screens/ReceiptScreen'
-import { FormScreen } from './screens/formScreen'
+import { FormScreen } from './screens/FormScreen'
 
 export function App() {
   return (
