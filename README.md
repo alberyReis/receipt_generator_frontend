@@ -1,69 +1,94 @@
-# React + TypeScript + Vite
+# 🧾 Receipt Generator Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Gere recibos profissionais a partir de um formulário dinâmico usando React e TypeScript.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+- 📝 Criar um recibo a partir de um formulário  
+- ➕ Adicionar múltiplos produtos dinamicamente  
+- 🔢 Numeração automática dos recibos  
+- 💰 Calcula o preço total dos produtos automaticamente  
+- 🎨 Layout simples e limpo  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Tecnologias
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React 19**  
+- **TypeScript 5.8**  
+- **Vite**  
+- **React Router DOM 7**  
+- **ESLint** para qualidade do código  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🚀 Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/alberyReis/receipt_generator_frontend.git
+cd receipt_generator_frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+Execute o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+O app será executado em http://localhost:5173.
+
+🖥 Uso
+
+1. Preencha as informações da empresa, cliente e produtos no formulário.<br>
+2. Clique em Adicionar Produto para incluir múltiplos itens no recibo.<br>
+3. A numeração do recibo é incrementada automaticamente.<br>
+4. Envie o formulário para visualizar o recibo estilizado na ReceiptScreen.
+
+🧩 Componentes e Telas
+
+Componentes:
+
+* AddIcon – ícone para adicionar produtos
+* ButtonSubmitForm – botão de envio estilizado
+* ContainerInput – container para inputs
+* InputErrorText – exibe erros de validação
+* InputForm – componente principal de input
+
+Telas:
+
+* FormScreen – formulário principal para preencher os dados do recibo
+* ReceiptScreen – exibe o recibo gerado
+
+📁 Estrutura de Pastas
+
+```bash
+src/
+├── components/
+│   ├── AddIcon/
+│   ├── ButtonSubmitForm/
+│   ├── ContainerInput/
+│   ├── InputErrorText/
+│   └── InputForm/
+├── screens/
+│   ├── FormScreen/
+│   └── ReceiptScreen/
+├── App.tsx
+├── main.tsx
+├── index.css
+├── App.css
+└── vite-env.d.ts
+```
+
+📄 Licença
+
+Este projeto está licenciado sob MIT.
