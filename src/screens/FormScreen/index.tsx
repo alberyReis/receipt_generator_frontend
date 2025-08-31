@@ -220,7 +220,7 @@ export const FormScreen = () => {
                             id='clientName'
                             type='text'
                             label='Nome do Cliente'
-                            placeholder='Fraldinhas'
+                            placeholder='Magic Fest...'
                             value={clientName}
                             onChange={(e) => setClientName(e.target.value)}
                         />
@@ -228,7 +228,7 @@ export const FormScreen = () => {
                             id='cpfOrCnpj'
                             type='text'
                             label='CPF/CNPJ do Cliente'
-                            placeholder='000.000.000-41'
+                            placeholder='000.000.000-00'
                             value={cpfOrCnpj}
                             onChange={(e) => setCpfOrCnpj(e.target.value)}
                         />
