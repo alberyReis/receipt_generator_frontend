@@ -7,6 +7,7 @@ import { AddIcon } from '../../components/AddIcon'
 import { ButtonSubmitForm } from '../../components/ButtonSubmitForm'
 import { InputErrorText } from '../../components/InputErrorText'
 import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
 
 interface ValidateCpfCnpjResult {
     value: string
@@ -209,62 +210,61 @@ export const FormScreen = () => {
     }
 
     return (
-        <div>
+        <div className={styles.containerFormScreen}>
             <Header />
-            <div className={styles.containerFormScreen}>
-                <form className={styles.formWrapper} onSubmit={handleSubmitForm}>
-                    <fieldset className={styles.formFieldset}>
-                        <legend className={styles.formLegend}>Preencha e crie seu recibo</legend>
-                        <ContainerInput>
-                            <InputForm
-                                id='clientName'
-                                type='text'
-                                label='Nome do Cliente'
-                                placeholder='Fraldinhas'
-                                value={clientName}
-                                onChange={(e) => setClientName(e.target.value)}
-                            />
-                            <InputForm
-                                id='cpfOrCnpj'
-                                type='text'
-                                label='CPF/CNPJ do Cliente'
-                                placeholder='000.000.000-41'
-                                value={cpfOrCnpj}
-                                onChange={(e) => setCpfOrCnpj(e.target.value)}
-                            />
-                        </ContainerInput>
-                        <ContainerInput>
-                            <InputForm
-                                id='quantity'
-                                type='text'
-                                label='Quantidade do Produto'
-                                placeholder='1'
-                                value={quantity}
-                                onChange={(e) => setQuantity(e.target.value)}
-                            />
-                            <InputForm
-                                id='description'
-                                type='text'
-                                label='Nome do Produto'
-                                placeholder='Caixa Sextavada'
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                            />
-                            <InputForm
-                                id='price'
-                                type='text'
-                                label='Preço do Produto'
-                                placeholder='6,00'
-                                value={price}
-                                onChange={(e) => setPrice(e.target.value)}
-                            />
-                            <AddIcon onClick={handleAddProduct} />
-                        </ContainerInput>
-                        <InputErrorText textError={errorMessage} />
-                        <ButtonSubmitForm />
-                    </fieldset>
-                </form>
-            </div>
+            <form className={styles.formWrapper} onSubmit={handleSubmitForm}>
+                <fieldset className={styles.formFieldset}>
+                    <legend className={styles.formLegend}>Preencha e crie seu recibo</legend>
+                    <ContainerInput>
+                        <InputForm
+                            id='clientName'
+                            type='text'
+                            label='Nome do Cliente'
+                            placeholder='Fraldinhas'
+                            value={clientName}
+                            onChange={(e) => setClientName(e.target.value)}
+                        />
+                        <InputForm
+                            id='cpfOrCnpj'
+                            type='text'
+                            label='CPF/CNPJ do Cliente'
+                            placeholder='000.000.000-41'
+                            value={cpfOrCnpj}
+                            onChange={(e) => setCpfOrCnpj(e.target.value)}
+                        />
+                    </ContainerInput>
+                    <ContainerInput>
+                        <InputForm
+                            id='quantity'
+                            type='text'
+                            label='Quantidade do Produto'
+                            placeholder='1'
+                            value={quantity}
+                            onChange={(e) => setQuantity(e.target.value)}
+                        />
+                        <InputForm
+                            id='description'
+                            type='text'
+                            label='Nome do Produto'
+                            placeholder='Caixa Sextavada'
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                        />
+                        <InputForm
+                            id='price'
+                            type='text'
+                            label='Preço do Produto'
+                            placeholder='6,00'
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
+                        />
+                        <AddIcon onClick={handleAddProduct} />
+                    </ContainerInput>
+                    <InputErrorText textError={errorMessage} />
+                    <ButtonSubmitForm />
+                </fieldset>
+            </form>
+            <Footer />
         </div>
     )
 }

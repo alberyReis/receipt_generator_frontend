@@ -19,7 +19,6 @@
   padding: 40px;
 }
 
-/* ---------- Header ---------- */
 .header {
   display: flex;
   justify-content: space-between;
@@ -44,7 +43,6 @@
   font-size: 40px;
 }
 
-/* ---------- Client / Order Info ---------- */
 .clientSection {
   display: flex;
   justify-content: space-between;
@@ -85,7 +83,6 @@
   text-align: right;
 }
 
-/* ---------- Products Table ---------- */
 .productsTable {
   width: 100%;
   border-collapse: collapse;
@@ -110,7 +107,6 @@
   text-align: right;
 }
 
-/* ---------- Total ---------- */
 .totalRow {
   border: 2px solid var(--darkMediumColor);
   display: flex;
@@ -121,7 +117,6 @@
   font-weight: bold;
 }
 
-/* ---------- Footer ---------- */
 .footer {
   margin-top: 20px;
   text-align: center;
