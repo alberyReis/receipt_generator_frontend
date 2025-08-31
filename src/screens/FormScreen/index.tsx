@@ -197,7 +197,7 @@ export const FormScreen = () => {
         }, 0)
 
         const formValues: FormValues = {
-            receiptNumber: newReceiptNumber.toString().padStart(4, '0'),
+            receiptNumber: newReceiptNumber.toString().padStart(6, '0'),
             formattedDate,
             clientName,
             cpfOrCnpj: formattedCpfCnpj.formattedValue,
