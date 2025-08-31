@@ -200,7 +200,7 @@ export const FormScreen = () => {
             formattedDate,
             clientName,
             cpfOrCnpj: formattedCpfCnpj.formattedValue,
-            totalProductPrice: totalPrice.toFixed(2),
+            totalProductPrice: totalPrice.toFixed(2).replace('.', ','),
             products,
         }
 

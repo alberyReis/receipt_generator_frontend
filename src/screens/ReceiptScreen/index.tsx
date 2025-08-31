@@ -58,7 +58,7 @@ export const ReceiptScreen = () => {
                                 <tr key={index}>
                                     <td>{product.quantity}</td>
                                     <td>{product.description}</td>
-                                    <td className={styles.priceColumn}>R$ {product.quantity}</td>
+                                    <td className={styles.priceColumn}>R${product.price?.replace('.', ',')}</td>
                                 </tr>
                             ))}
                         </tbody>
