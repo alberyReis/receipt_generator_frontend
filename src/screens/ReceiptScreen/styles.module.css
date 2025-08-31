@@ -3,26 +3,27 @@
   background-color: var(--pinkColor);
   color: var(--darkMediumColor);
   display: flex;
-  height: 100vh;
+  font-family: var(--fontFamilySheet);
   justify-content: center;
   width: 100vw;
-  font-family: var(--fontFamilySheet);
+  min-height: 100vh;
+  padding: 1rem;
 }
 
 .sheet {
+  background-color: var(--lightColor);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--lightColor);
   width: 662px;
-  height: 935px;
+  min-height: 935px;
   padding: 40px;
 }
 
 .header {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 30px;
   padding: 20px;
 }
@@ -33,9 +34,9 @@
 }
 
 .separatorLine {
+  background-color: #ccc;
   height: 14px;
   width: 100%;
-  background-color: #ccc;
   margin-bottom: 14px;
 }
 
@@ -45,9 +46,9 @@
 
 .clientSection {
   display: flex;
-  justify-content: space-between;
-  gap: 44px;
   font-size: 18px;
+  gap: 44px;
+  justify-content: space-between;
   margin-bottom: 30px;
 }
 
@@ -66,15 +67,15 @@
 }
 
 .fieldLabel {
+  display: inline-block;
   font-weight: bold;
   padding-right: 8px;
-  display: inline-block;
 }
 
 .fieldLabelRight {
   font-weight: bold;
-  text-align: right;
   padding-right: 20px;
+  text-align: right;
 }
 
 .fieldValue {
@@ -84,17 +85,17 @@
 }
 
 .productsTable {
-  width: 100%;
-  border-collapse: collapse;
   border: 1px solid var(--darkMediumColor);
+  border-collapse: collapse;
+  width: 100%;
   margin: 20px auto 40px;
 }
 
 .productsTable th {
   border-bottom: 1px solid var(--darkMediumColor);
-  text-align: left;
-  padding: 10px 20px;
   font-size: 20px;
+  padding: 10px 20px;
+  text-align: left;
 }
 
 .productsTable td {
@@ -108,13 +109,13 @@
 }
 
 .totalRow {
+  align-items: center;
   border: 2px solid var(--darkMediumColor);
   display: flex;
-  align-items: center;
+  font-weight: bold;
+  font-size: 26px;
   justify-content: space-between;
   padding: 10px 18px;
-  font-size: 26px;
-  font-weight: bold;
 }
 
 .footer {

@@ -1,19 +1,19 @@
 .containerFormScreen {
+    align-items: center;
+    background-color: var(--whiteColor);
     display: flex;
     flex-direction: column;
+    font-family: var(--fontFamilyProject);
     justify-content: space-between;
-    align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: var(--whiteColor);
-    font-family: var(--fontFamilyProject);
 }
 
 .formWrapper {
-    display: flex;
-    justify-content: center;
     align-items: center;
     color: var(--pinkColor);
+    display: flex;
+    justify-content: center;
 }
 
 .formFieldset {
@@ -23,8 +23,8 @@
 }
 
 .formLegend {
-    font-size: 1.8rem;
-    font-weight: bold;
     color: var(--lightMediumColor);
+    font-weight: bold;
+    font-size: 1.8rem;
     padding: 0 0.8rem;
 }
