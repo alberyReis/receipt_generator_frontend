@@ -16,7 +16,7 @@ export const ReceiptScreen = () => {
                             <p className={styles.title}>Recibo</p>
                         </div>
                         <img
-                            src="../../../public/assets/images/logo_mg.png"
+                            src="/logo_mg.png"
                             alt="Logo da Magic Fest"
                             width="100"
                         />

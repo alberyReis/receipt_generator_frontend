@@ -9,7 +9,7 @@ export const AddIcon = (props: IAddIconProps) => {
         <div className={styles.img}>
             <img
                 onClick={props.onClick}
-                src='../../../public/assets/images/add.png'
+                src='/add.png'
                 width='32px'
             />
         </div>
