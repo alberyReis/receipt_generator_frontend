@@ -220,7 +220,7 @@ export const FormScreen = () => {
                             id='clientName'
                             type='text'
                             label='Nome do Cliente'
-                            placeholder='Magic Fest...'
+                            placeholder='Magic Fest'
                             value={clientName}
                             onChange={(e) => setClientName(e.target.value)}
                         />
