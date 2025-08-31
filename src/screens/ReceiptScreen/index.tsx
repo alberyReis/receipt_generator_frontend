@@ -34,14 +34,14 @@ export const ReceiptScreen = () => {
                         </div>
                         <div className={styles.orderInfo}>
                             <div className={styles.fieldLabels}>
-                                <p className={styles.fieldLabelRight}>CPF/CNPJ:</p>
                                 <p className={styles.fieldLabelRight}>NÚMERO DO PEDIDO:</p>
                                 <p className={styles.fieldLabelRight}>DATA DO PEDIDO:</p>
+                                <p className={styles.fieldLabelRight}>CPF/CNPJ:</p>
                             </div>
                             <div className={styles.fieldValues}>
-                                <p className={styles.fieldValue}>{formData.cpfOrCnpj}</p>
                                 <p className={styles.fieldValue}>{formData.receiptNumber}</p>
                                 <p className={styles.fieldValue}>{formData.formattedDate}</p>
+                                <p className={styles.fieldValue}>{formData.cpfOrCnpj}</p>
                             </div>
                         </div>
                     </section>
