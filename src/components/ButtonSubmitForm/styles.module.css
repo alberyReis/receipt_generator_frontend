@@ -1,18 +1,20 @@
 .subimt {
-    background-color: var(--lightMediumColor);
+    background-color: var(--pinkColor);
     border: none;
     border-radius: 0.4rem;
-    color: var(--darkColor);
+    color: var(--darkMediumColor);
     display: flex;
     height: 3rem;
     font-size: 1.4rem;
     font-weight: bold;
     width: 100%;
+    margin-top: 2rem;
 }
 
 .subimt:hover {
     cursor: pointer;
-    background-color: var(--mediumColor);
+    background-color: var(--pinkColor);
+    opacity: 0.8;
     transition: 0.2s;
 }
 

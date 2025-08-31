@@ -1,55 +1,77 @@
 import styles from './styles.module.css'
 import { useLocation } from 'react-router-dom'
-import type { IFormValues } from '../FormScreen'
+import type { FormValues } from '../FormScreen'
 
 export const ReceiptScreen = () => {
     const location = useLocation()
-    const formValues: IFormValues = location.state
+    const formData: FormValues = location.state
 
     return (
         <div className={styles.container}>
             <div className={styles.sheet}>
-                <div className={styles.header}>
-                    <div className={styles.logo}>
-                        <p>LOGO MAGIC FEST</p>
-                    </div>
-                    <div className={styles.data}>
-                        <div>
-                            <p className={styles.dataText}>RECIBO:</p>
-                            <p>{formValues.receiptNumber}</p>
+                <div>
+                    <header className={styles.header}>
+                        <div className={styles.titleContainer}>
+                            <div className={styles.separatorLine}></div>
+                            <p className={styles.title}>Recibo</p>
                         </div>
-                        <div>
-                            <p className={styles.dataText}>DATA:</p>
-                            <p>{formValues.formattedDate}</p>
+                        <img
+                            src="../../../public/assets/images/logo_mg.png"
+                            alt="Logo da Magic Fest"
+                            width="100"
+                        />
+                    </header>
+                    <section className={styles.clientSection}>
+                        <div className={styles.clientInfo}>
+                            <div className={styles.fieldGroup}>
+                                <p className={styles.fieldLabel}>DE:</p>
+                                <p>Magic Fest</p>
+                            </div>
+                            <div className={styles.fieldGroup}>
+                                <p className={styles.fieldLabel}>COBRAR A:</p>
+                                <p>{formData.clientName}</p>
+                            </div>
                         </div>
-                        <div>
-                            <p className={styles.dataText}>CLIENTE:</p>
-                            <p>{formValues.clientName}</p>
+                        <div className={styles.orderInfo}>
+                            <div className={styles.fieldLabels}>
+                                <p className={styles.fieldLabelRight}>CPF/CNPJ:</p>
+                                <p className={styles.fieldLabelRight}>NÚMERO DO PEDIDO:</p>
+                                <p className={styles.fieldLabelRight}>DATA DO PEDIDO:</p>
+                            </div>
+                            <div className={styles.fieldValues}>
+                                <p className={styles.fieldValue}>{formData.cpfOrCnpj}</p>
+                                <p className={styles.fieldValue}>{formData.receiptNumber}</p>
+                                <p className={styles.fieldValue}>{formData.formattedDate}</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <table className={styles.productsContainer}>
-                    <thead>
-                        <tr>
-                            <th>QUANTIDADE</th>
-                            <th>DESCRIÇÃO</th>
-                            <th>PREÇO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {formValues.productList.map((product, index) => (
-                            <tr key={index}>
-                                <td>{product.productQuantity}</td>
-                                <td>{product.productDescripition}</td>
-                                <td>R$ {product.productPrice}</td>
+                    </section>
+                    <table className={styles.productsTable}>
+                        <thead>
+                            <tr>
+                                <th>QTD</th>
+                                <th>DESCRIÇÃO</th>
+                                <th className={styles.priceColumn}>PREÇO</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <div className={styles.total}>
-                    <p>TOTAL:</p>
-                    <p>R$ {formValues.totalProductPrice}</p>
+                        </thead>
+                        <tbody>
+                            {formData.products.map((product, index) => (
+                                <tr key={index}>
+                                    <td>{product.quantity}</td>
+                                    <td>{product.description}</td>
+                                    <td className={styles.priceColumn}>R$ {product.quantity}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <div className={styles.totalRow}>
+                        <p>TOTAL:</p>
+                        <p>R$ {formData.totalProductPrice}</p>
+                    </div>
                 </div>
+
+                <footer className={styles.footer}>
+                    <p>Atenciosamente, Magic Fest</p>
+                </footer>
             </div>
         </div>
     )

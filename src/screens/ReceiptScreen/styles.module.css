@@ -1,84 +1,128 @@
 .container {
-    align-items: center;
-    background-color: var(--darkColor);
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    width: 100vw;
-    font-family: var(--fontFamilySheet);
+  align-items: center;
+  background-color: var(--pinkColor);
+  color: var(--darkMediumColor);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+  font-family: var(--fontFamilySheet);
 }
 
 .sheet {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: #fff;
-    width: 662px;
-    height: 935px;
-    padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--lightColor);
+  width: 662px;
+  height: 935px;
+  padding: 40px;
 }
 
+/* ---------- Header ---------- */
 .header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 80px;
-    border: 2px solid #888;
-    padding: 20px;
-    border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
 }
 
-.logo {
-    width: 40px;
-    height: 40px;
+.titleContainer {
+  display: flex;
+  flex-direction: column;
 }
 
-.data div {
-    display: flex;
-    justify-content: space-between;
-    gap: 44px;
-    font-size: 18px;
+.separatorLine {
+  height: 14px;
+  width: 100%;
+  background-color: #ccc;
+  margin-bottom: 14px;
 }
 
-.dataText {
-    font-weight: bold;
-    padding-right: 8px;
+.title {
+  font-size: 40px;
 }
 
-.productsContainer {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 15px 10px;
-    border: 1px solid #888;
-    margin: 20px auto;
-    margin-bottom: 80px;
+/* ---------- Client / Order Info ---------- */
+.clientSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 44px;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
-.productsContainer th {
-    text-align: center;
-    padding: 10px 20px;
-    border-bottom: 2px solid #888;
+.clientInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-
-.productsContainer td {
-    padding: 10px 20px;
-    text-align: left;
-    border: 1px solid #ccc;
+.orderInfo {
+  display: flex;
 }
 
-.total {
-    border: 2px solid #888;
-    display: flex;
-    align-items: center;
-    padding: 10px 18px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 28px;
-    font-weight: bold;
-    font-style: italic;
-    border-radius: 10px;
+.fieldGroup {
+  padding: 10px 0;
 }
 
-.total p {
-    display: inline-block;
+.fieldLabel {
+  font-weight: bold;
+  padding-right: 8px;
+  display: inline-block;
+}
+
+.fieldLabelRight {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.fieldValue {
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: right;
+}
+
+/* ---------- Products Table ---------- */
+.productsTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--darkMediumColor);
+  margin: 20px auto 40px;
+}
+
+.productsTable th {
+  border-bottom: 1px solid var(--darkMediumColor);
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.productsTable td {
+  border-bottom: 1px solid var(--darkMediumColor);
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.productsTable .priceColumn {
+  text-align: right;
+}
+
+/* ---------- Total ---------- */
+.totalRow {
+  border: 2px solid var(--darkMediumColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: 20px;
+  text-align: center;
 }
