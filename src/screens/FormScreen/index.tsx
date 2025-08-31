@@ -1,5 +1,5 @@
 import styles from './styles.module.css'
-import { useEffect, useState, type FormEvent } from 'react'
+import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ContainerInput } from '../../components/ContainerInput'
 import { InputForm } from '../../components/InputForm'
