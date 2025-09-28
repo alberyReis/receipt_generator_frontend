@@ -92,6 +92,10 @@
   text-align: left;
 }
 
+.productsTable tr {
+  font-size: 0.8rem;
+}
+
 .productsTable th {
   border-bottom: 0.1rem solid var(--darkMediumColor);
   font-size: 1rem;
@@ -117,7 +121,7 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 .titleContainer {
@@ -135,3 +139,87 @@
   padding: 0.6rem 1.1rem;
 }
 
+@media (max-width: 31.2rem) {
+  .clientInfo {
+    gap: 0.3rem;
+  }
+
+  .clientSection {
+    font-size: 0.4rem;
+    gap: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .fieldGroup {
+    padding: 0.3rem 0;
+  }
+
+  .fieldLabel {
+    padding-right: 0.25rem;
+  }
+
+  .fieldLabelRight {
+    padding-right: 0.6rem;
+  }
+
+  .fieldLabels {
+    gap: 0.1rem;
+  }
+
+  .fieldValue {
+    font-size: 0.4rem;
+  }
+
+  .fieldValues {
+    gap: 0.1rem;
+  }
+
+  .footer {
+    margin-top: 0.6rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+    padding: 0.6rem;
+  }
+
+  .header img {
+    width: 2rem;
+  }
+
+  .productsTable {
+    margin: 0.6rem auto 1.25rem;
+  }
+
+  .productsTable td,
+  .productsTable th {
+    padding: 0.3rem 0.6rem;
+  }
+
+  .productsTable tr {
+    font-size: 0.4rem;
+  }
+
+  .productsTable th {
+    font-size: 0.5rem;
+  }
+
+  .sheet {
+    padding: 1.2rem;
+    width: 20.5rem;
+  }
+
+  .separatorLine {
+    height: 0.45rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .totalRow {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.55rem;
+  }
+}
