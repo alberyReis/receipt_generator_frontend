@@ -331,28 +331,46 @@
     background: #fff;
     margin: 0;
     padding: 0;
+    width: 100% !important;
   }
 
   body, .container, .sheet {
     transform: none !important;
     zoom: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .sheet {
     width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 1rem !important;
+    padding: 2rem !important;
     box-sizing: border-box;
-    transform-origin: top left;
-    transform: scale(1.08);
   }
 
-  .no-print, .hide-on-print {
-    display: none !important;
+  .title {
+    font-size: 2.6rem !important;
+    line-height: 1.4 !important;
   }
 
-  .title, .productsTable th {
-    font-size: 1.6rem !important;
+  .productsTable th,
+  .productsTable td {
+    font-size: 1.2rem !important;
+    padding: 1rem !important;
+  }
+
+  .clientSection,
+  .fieldValues,
+  .fieldLabels {
+    gap: 1rem !important;
+  }
+
+  .totalRow {
+    font-size: 1.4rem !important;
+    padding: 1rem !important;
+  }
+
+  .footer {
+    font-size: 1.2rem !important;
+    margin-top: 1.5rem !important;
   }
 }
