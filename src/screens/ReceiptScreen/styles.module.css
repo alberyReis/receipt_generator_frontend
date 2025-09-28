@@ -209,10 +209,10 @@
   }
 
   .sheet {
-  height: 29rem;
-  padding: 1.2rem;
-  width: 20.5rem;
-}
+    height: 29rem;
+    padding: 1.2rem;
+    width: 20.5rem;
+  }
 
   .separatorLine {
     height: 0.45rem;
@@ -226,5 +226,95 @@
   .totalRow {
     font-size: 0.6rem;
     padding: 0.3rem 0.55rem;
+  }
+}
+
+@media print {
+  .clientInfo {
+    gap: 0.6rem;
+  }
+
+  .clientSection {
+    font-size: 0.8rem;
+    gap: 2.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .fieldGroup {
+    padding: 0.6rem 0;
+  }
+
+  .fieldLabel {
+    padding-right: 0.5rem;
+  }
+
+  .fieldLabelRight {
+    padding-right: 1.2rem;
+  }
+
+  .fieldLabels {
+    gap: 0.2rem;
+  }
+
+  .fieldValue {
+    font-size: 0.8rem;
+  }
+
+  .fieldValues {
+    gap: 0.2rem;
+  }
+
+  .footer {
+    margin-top: 1.2rem;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+    padding: 1.2rem;
+  }
+
+  .header img {
+    width: 4rem;
+  }
+
+  .productsTable {
+    margin: 1.2rem auto 2.5rem;
+  }
+
+  .productsTable td,
+  .productsTable th {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .productsTable tr {
+    font-size: 0.8rem;
+  }
+
+  .productsTable th {
+    font-size: 1rem;
+  }
+
+  .sheet {
+    height: 58rem;
+    padding: 2.4rem;
+    width: 41rem;
+  }
+
+  .separatorLine {
+    height: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .totalRow {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.1rem;
   }
 }
