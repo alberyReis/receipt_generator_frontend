@@ -230,17 +230,6 @@
 }
 
 @media print {
-  @page {
-    size: auto;
-    margin: 0;
-  }
-
-  body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    zoom: 2;
-  }
-  
   .clientInfo {
     gap: 0.6rem;
   }
@@ -310,9 +299,9 @@
   }
 
   .sheet {
-    height: 58rem;
+    height: 100%;
     padding: 2.4rem;
-    width: 41rem;
+    width: 100%;
   }
 
   .separatorLine {
