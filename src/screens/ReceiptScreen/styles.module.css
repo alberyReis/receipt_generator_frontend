@@ -108,7 +108,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 58rem;
+  height: 58rem;
   padding: 2.5rem;
   width: 41rem;
 }
@@ -209,9 +209,10 @@
   }
 
   .sheet {
-    padding: 1.2rem;
-    width: 20.5rem;
-  }
+  height: 29rem;
+  padding: 1.2rem;
+  width: 20.5rem;
+}
 
   .separatorLine {
     height: 0.45rem;
