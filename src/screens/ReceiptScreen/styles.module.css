@@ -140,17 +140,6 @@
 }
 
 @media (max-width: 31.2rem) {
-  @page {
-    size: auto;
-    margin: 0;
-  }
-
-  body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    zoom: 2;
-  }
-
   .clientInfo {
     gap: 0.3rem;
   }
@@ -241,6 +230,17 @@
 }
 
 @media print {
+  @page {
+    size: auto;
+    margin: 0;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    zoom: 2;
+  }
+  
   .clientInfo {
     gap: 0.6rem;
   }
