@@ -230,96 +230,6 @@
 }
 
 @media print {
-  .clientInfo {
-    gap: 0.6rem;
-  }
-
-  .clientSection {
-    font-size: 0.8rem;
-    gap: 2.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .fieldGroup {
-    padding: 0.6rem 0;
-  }
-
-  .fieldLabel {
-    padding-right: 0.5rem;
-  }
-
-  .fieldLabelRight {
-    padding-right: 1.2rem;
-  }
-
-  .fieldLabels {
-    gap: 0.2rem;
-  }
-
-  .fieldValue {
-    font-size: 0.8rem;
-  }
-
-  .fieldValues {
-    gap: 0.2rem;
-  }
-
-  .footer {
-    margin-top: 1.2rem;
-  }
-
-  .footer p {
-    font-size: 0.8rem;
-  }
-
-  .header {
-    margin-bottom: 2rem;
-    padding: 1.2rem;
-  }
-
-  .header img {
-    width: 4rem;
-  }
-
-  .productsTable {
-    margin: 1.2rem auto 2.5rem;
-  }
-
-  .productsTable td,
-  .productsTable th {
-    padding: 0.6rem 1.2rem;
-  }
-
-  .productsTable tr {
-    font-size: 0.8rem;
-  }
-
-  .productsTable th {
-    font-size: 1rem;
-  }
-
-  .sheet {
-    height: 100%;
-    padding: 2.4rem;
-    width: 100%;
-  }
-
-  .separatorLine {
-    height: 0.9rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .title {
-    font-size: 2.4rem;
-  }
-
-  .totalRow {
-    font-size: 1.2rem;
-    padding: 0.6rem 1.1rem;
-  }
-}
-
-@media print {
   @page {
     size: auto;
     margin: 0;
@@ -343,7 +253,7 @@
 
   .sheet {
     width: 100% !important;
-    padding: 2rem !important;
+    padding: 6rem !important;
     box-sizing: border-box;
   }
 
