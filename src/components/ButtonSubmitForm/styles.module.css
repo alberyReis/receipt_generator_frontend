@@ -4,21 +4,21 @@
     border-radius: 0.4rem;
     color: var(--darkMediumColor);
     display: flex;
-    height: 3rem;
     font-size: 1.4rem;
     font-weight: bold;
-    width: 100%;
+    height: 3rem;
     margin-top: 2rem;
-}
-
-.subimt:hover {
-    cursor: pointer;
-    background-color: var(--pinkColor);
-    opacity: 0.8;
-    transition: 0.2s;
+    width: 100%;
 }
 
 .subimt:active {
     opacity: 0.6;
     transform: scale(0.98);
+}
+
+.subimt:hover {
+    background-color: var(--pinkColor);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
 }

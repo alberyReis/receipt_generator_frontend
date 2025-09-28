@@ -1,4 +1,4 @@
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
 export const Header = () => {
     return (
@@ -6,5 +6,5 @@ export const Header = () => {
             <div className={styles.title}>Gerador de Recibo</div>
             <img src="/logo_mg.png" alt="Logo da Magic Fest" width='80px' />
         </header>
-    )
-}
+    );
+};

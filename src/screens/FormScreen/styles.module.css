@@ -4,16 +4,10 @@
     display: flex;
     flex-direction: column;
     font-family: var(--fontFamilyProject);
-    justify-content: space-between;
     height: 100vh;
+    justify-content: space-between;
+    padding: 2.4em;
     width: 100vw;
-}
-
-.formWrapper {
-    align-items: center;
-    color: var(--pinkColor);
-    display: flex;
-    justify-content: center;
 }
 
 .formFieldset {
@@ -24,7 +18,21 @@
 
 .formLegend {
     color: var(--lightMediumColor);
+    font-size: 1.6rem;
     font-weight: bold;
-    font-size: 1.8rem;
     padding: 0 0.8rem;
+    text-align: center;
+}
+
+.formWrapper {
+    align-items: center;
+    color: var(--pinkColor);
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 31.2rem) {
+    .formFieldset {
+        padding: 2rem 1rem;
+    }
 }

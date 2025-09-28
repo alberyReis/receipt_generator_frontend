@@ -1,8 +1,8 @@
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
 interface IAddIconProps {
-    onClick: () => void
-}
+    onClick: () => void;
+};
 
 export const AddIcon = (props: IAddIconProps) => {
     return (
@@ -13,5 +13,5 @@ export const AddIcon = (props: IAddIconProps) => {
                 width='32px'
             />
         </div>
-    )
-}
+    );
+};

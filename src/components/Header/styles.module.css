@@ -3,12 +3,22 @@
     display: flex;
     font-family: var(--fontFamilyProject);
     justify-content: space-between;
+    margin-bottom: 2.5rem;
     width: 100%;
-    padding: 40px 40px 0 40px;
 }
 
 .title {
     color: var(--pinkColor);
-    font-weight: bold;
     font-size: 2.2rem;
+    font-weight: bold;
+}
+
+@media (max-width: 31.2rem) {
+    .container img {
+        display: none;
+    }
+
+    .title {
+        text-align: center;
+    }
 }

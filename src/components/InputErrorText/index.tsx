@@ -1,11 +1,11 @@
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
 interface IInputErrorTextProps {
-    textError: string
-}
+    textError: string;
+};
 
 export const InputErrorText = (props: IInputErrorTextProps) => {
     return (
         <p className={styles.textError}>{props.textError}</p>
-    )
-}
+    );
+};

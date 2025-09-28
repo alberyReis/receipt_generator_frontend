@@ -1,4 +1,4 @@
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
 export const ButtonSubmitForm = () => {
     return (
@@ -7,5 +7,5 @@ export const ButtonSubmitForm = () => {
             type="submit"
             value='Criar'
         />
-    )
-}
+    );
+};

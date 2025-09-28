@@ -1,8 +1,6 @@
-import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css'
-import { ReceiptScreen } from './screens/ReceiptScreen'
-import { FormScreen } from './screens/FormScreen'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ReceiptScreen } from './screens/ReceiptScreen';
+import { FormScreen } from './screens/FormScreen';
 
 export function App() {
   return (
@@ -12,5 +10,5 @@ export function App() {
         <Route path='/receipter' element={<ReceiptScreen />} />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};

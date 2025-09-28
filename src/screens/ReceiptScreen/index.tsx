@@ -1,10 +1,10 @@
-import styles from './styles.module.css'
-import { useLocation } from 'react-router-dom'
-import type { FormValues } from '../FormScreen'
+import styles from './styles.module.css';
+import { useLocation } from 'react-router-dom';
+import type { FormValues } from '../../interfaces/interfaces';
 
 export const ReceiptScreen = () => {
-    const location = useLocation()
-    const formData: FormValues = location.state
+    const location = useLocation();
+    const formData: FormValues = location.state;
 
     return (
         <div className={styles.container}>
@@ -25,23 +25,25 @@ export const ReceiptScreen = () => {
                         <div className={styles.clientInfo}>
                             <div className={styles.fieldGroup}>
                                 <p className={styles.fieldLabel}>DE:</p>
-                                <p>Magic Fest</p>
+                                <p>{formData.companyName}</p>
+                                {formData.companyCpfOrCnpj &&
+                                    <p>{formData.companyCpfOrCnpj}</p>
+                                }
                             </div>
                             <div className={styles.fieldGroup}>
                                 <p className={styles.fieldLabel}>COBRAR A:</p>
                                 <p>{formData.clientName}</p>
+                                <p>{formData.clientCpfOrCnpj}</p>
                             </div>
                         </div>
                         <div className={styles.orderInfo}>
                             <div className={styles.fieldLabels}>
                                 <p className={styles.fieldLabelRight}>NÚMERO DO PEDIDO:</p>
                                 <p className={styles.fieldLabelRight}>DATA DO PEDIDO:</p>
-                                <p className={styles.fieldLabelRight}>CPF/CNPJ:</p>
                             </div>
                             <div className={styles.fieldValues}>
                                 <p className={styles.fieldValue}>{formData.receiptNumber}</p>
                                 <p className={styles.fieldValue}>{formData.formattedDate}</p>
-                                <p className={styles.fieldValue}>{formData.cpfOrCnpj}</p>
                             </div>
                         </div>
                     </section>
@@ -74,5 +76,5 @@ export const ReceiptScreen = () => {
                 </footer>
             </div>
         </div>
-    )
-}
+    );
+};

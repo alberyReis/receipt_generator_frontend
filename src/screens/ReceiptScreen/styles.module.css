@@ -1,3 +1,17 @@
+.clientInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.clientSection {
+  display: flex;
+  font-size: 0.8rem;
+  gap: 2.8rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
 .container {
   align-items: center;
   background-color: var(--pinkColor);
@@ -5,9 +19,84 @@
   display: flex;
   font-family: var(--fontFamilySheet);
   justify-content: center;
-  width: 100vw;
   min-height: 100vh;
-  padding: 1rem;
+  width: 100vw;
+}
+
+.fieldGroup {
+  padding: 0.6rem 0;
+}
+
+.fieldLabel {
+  display: inline-block;
+  font-weight: bold;
+  padding-right: 0.5rem;
+}
+
+.fieldLabelRight {
+  font-weight: bold;
+  padding-right: 1.2rem;
+  text-align: right;
+}
+
+.fieldLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.fieldValue {
+  font-size: 0.8rem;
+  font-weight: 400;
+  justify-self: flex-start;
+  text-align: right;
+}
+
+.fieldValues {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 1.2rem;
+}
+
+.orderInfo {
+  display: flex;
+}
+
+.productsTable {
+  border: 0.1rem solid var(--darkMediumColor);
+  border-collapse: collapse;
+  margin: 1.2rem auto 2.5rem;
+  width: 100%;
+}
+
+.productsTable .priceColumn {
+  text-align: right;
+}
+
+.productsTable td {
+  border-bottom: 0.1rem solid var(--darkMediumColor);
+  padding: 0.6rem 1.2rem;
+  text-align: left;
+}
+
+.productsTable th {
+  border-bottom: 0.1rem solid var(--darkMediumColor);
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  text-align: left;
 }
 
 .sheet {
@@ -15,17 +104,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 662px;
-  min-height: 935px;
-  padding: 40px;
+  min-height: 58rem;
+  padding: 2.5rem;
+  width: 41rem;
 }
 
-.header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  padding: 20px;
+.separatorLine {
+  background-color: #ccc;
+  height: 0.9rem;
+  margin-bottom: 0.9rem;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.5rem;
 }
 
 .titleContainer {
@@ -33,92 +125,13 @@
   flex-direction: column;
 }
 
-.separatorLine {
-  background-color: #ccc;
-  height: 14px;
-  width: 100%;
-  margin-bottom: 14px;
-}
-
-.title {
-  font-size: 40px;
-}
-
-.clientSection {
-  display: flex;
-  font-size: 18px;
-  gap: 44px;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.clientInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.orderInfo {
-  display: flex;
-}
-
-.fieldGroup {
-  padding: 10px 0;
-}
-
-.fieldLabel {
-  display: inline-block;
-  font-weight: bold;
-  padding-right: 8px;
-}
-
-.fieldLabelRight {
-  font-weight: bold;
-  padding-right: 20px;
-  text-align: right;
-}
-
-.fieldValue {
-  font-weight: 400;
-  font-size: 1rem;
-  text-align: right;
-}
-
-.productsTable {
-  border: 1px solid var(--darkMediumColor);
-  border-collapse: collapse;
-  width: 100%;
-  margin: 20px auto 40px;
-}
-
-.productsTable th {
-  border-bottom: 1px solid var(--darkMediumColor);
-  font-size: 20px;
-  padding: 10px 20px;
-  text-align: left;
-}
-
-.productsTable td {
-  border-bottom: 1px solid var(--darkMediumColor);
-  padding: 10px 20px;
-  text-align: left;
-}
-
-.productsTable .priceColumn {
-  text-align: right;
-}
-
 .totalRow {
   align-items: center;
-  border: 2px solid var(--darkMediumColor);
+  border: 0.1rem solid var(--darkMediumColor);
   display: flex;
+  font-size: 1.2rem;
   font-weight: bold;
-  font-size: 26px;
   justify-content: space-between;
-  padding: 10px 18px;
+  padding: 0.6rem 1.1rem;
 }
 
-.footer {
-  margin-top: 20px;
-  text-align: center;
-}

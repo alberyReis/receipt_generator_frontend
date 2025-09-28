@@ -22,13 +22,49 @@
 }
 
 .input_form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0rem 62.5rem var(--lightColor) inset;
   background-color: var(--darkColor) !important;
-  -webkit-box-shadow: 0 0 0px 1000px var(--lightColor) inset;
   -webkit-text-fill-color: var(--darkMediumColor);
 }
 
 .input_form input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0rem 62.5rem var(--lightColor) inset;
   background-color: var(--darkColor) !important;
-  -webkit-box-shadow: 0 0 0px 1000px var(--lightColor) inset;
   -webkit-text-fill-color: var(--darkMediumColor);
+}
+
+.input_form option {
+  background-color: var(--lightColor);
+  color: var(--darkMediumColor);
+  font-size: 1rem;
+}
+
+.input_form select {
+  appearance: none;
+  background-color: var(--lightColor);
+  border: none;
+  border-bottom: 0.2rem solid var(--pinkColor);
+  color: var(--darkMediumColor);
+  cursor: pointer;
+  font-size: 1.2rem;
+  outline: none;
+  padding: 0.4rem 0;
+}
+
+.input_form select:focus {
+  border-bottom: 0.2rem solid var(--darkMediumColor);
+}
+
+@media (max-width: 31.2rem) {
+  .input_form input {
+    font-size: 0.8rem;
+  }
+
+  .input_form option {
+    font-size: 0.8rem;
+  }
+
+  .input_form select {
+    font-size: 0.8rem;
+  }
 }
