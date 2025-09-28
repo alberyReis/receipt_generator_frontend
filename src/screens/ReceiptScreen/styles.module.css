@@ -271,7 +271,7 @@
   .clientSection,
   .fieldValues,
   .fieldLabels {
-    gap: 0.4rem !important;
+    gap: 1rem !important;
   }
 
   .totalRow {
