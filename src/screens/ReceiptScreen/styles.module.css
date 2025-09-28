@@ -318,3 +318,41 @@
     padding: 0.6rem 1.1rem;
   }
 }
+
+@media print {
+  @page {
+    size: auto;
+    margin: 0;
+  }
+
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  body, .container, .sheet {
+    transform: none !important;
+    zoom: 1 !important;
+  }
+
+  .sheet {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+    box-sizing: border-box;
+    transform-origin: top left;
+    transform: scale(1.08);
+  }
+
+  .no-print, .hide-on-print {
+    display: none !important;
+  }
+
+  .title, .productsTable th {
+    font-size: 1.6rem !important;
+  }
+}
