@@ -230,6 +230,34 @@
 }
 
 @media print {
+  @page {
+    size: auto;
+    margin: 0;
+  }
+
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+  }
+
+  body, .container, .sheet {
+    transform: none !important;
+    zoom: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .sheet {
+    width: 100% !important;
+    padding: 2rem !important;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
   .clientInfo {
     gap: 0.6rem;
   }
@@ -265,7 +293,8 @@
   }
 
   .footer {
-    margin-top: 1.2rem;
+    margin-top: 1.5rem !important;
+    font-size: 1.2rem !important;
   }
 
   .footer p {
@@ -287,7 +316,8 @@
 
   .productsTable td,
   .productsTable th {
-    padding: 0.6rem 1.2rem;
+    padding: 1rem !important;
+    font-size: 1.2rem !important;
   }
 
   .productsTable tr {
@@ -298,10 +328,9 @@
     font-size: 1rem;
   }
 
-  .sheet {
-    height: 100%;
-    padding: 2.4rem;
-    width: 100%;
+  .title {
+    font-size: 2.6rem !important;
+    line-height: 1.4 !important;
   }
 
   .separatorLine {
@@ -309,68 +338,8 @@
     margin-bottom: 0.9rem;
   }
 
-  .title {
-    font-size: 2.4rem;
-  }
-
-  .totalRow {
-    font-size: 1.2rem;
-    padding: 0.6rem 1.1rem;
-  }
-}
-
-@media print {
-  @page {
-    size: auto;
-    margin: 0;
-  }
-
-  html, body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    background: #fff;
-    margin: 0;
-    padding: 0;
-    width: 100% !important;
-  }
-
-  body, .container, .sheet {
-    transform: none !important;
-    zoom: 1 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .sheet {
-    width: 100% !important;
-    padding: 2rem !important;
-    box-sizing: border-box;
-  }
-
-  .title {
-    font-size: 2.6rem !important;
-    line-height: 1.4 !important;
-  }
-
-  .productsTable th,
-  .productsTable td {
-    font-size: 1.2rem !important;
-    padding: 1rem !important;
-  }
-
-  .clientSection,
-  .fieldValues,
-  .fieldLabels {
-    gap: 1rem !important;
-  }
-
   .totalRow {
     font-size: 1.4rem !important;
     padding: 1rem !important;
-  }
-
-  .footer {
-    font-size: 1.2rem !important;
-    margin-top: 1.5rem !important;
   }
 }
