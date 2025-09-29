@@ -18,7 +18,7 @@ export const ReceiptScreen = () => {
                         <img
                             src="/logo_mg.png"
                             alt="Logo da Magic Fest"
-                            width="100"
+                            width="60"
                         />
                     </header>
                     <section className={styles.clientSection}>

@@ -20,11 +20,10 @@
 }
 
 .header {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
-  padding: 1.2rem;
+  margin-bottom: 3rem;
 }
 
 .titleContainer {
@@ -34,13 +33,13 @@
 
 .separatorLine {
   background-color: #ccc;
-  height: 0.9rem;
+  height: 0.6rem;
   margin-bottom: 0.9rem;
   width: 100%;
 }
 
 .title {
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
 .clientSection {
@@ -309,7 +308,7 @@
   }
 
   .header {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     padding: 1.2rem;
   }
 
@@ -336,12 +335,12 @@
   }
 
   .title {
-    font-size: 2.6rem !important;
+    font-size: 2.4rem !important;
     line-height: 1.4 !important;
   }
 
   .separatorLine {
-    height: 0.9rem;
+    height: 0.6rem;
     margin-bottom: 0.9rem;
   }
 
