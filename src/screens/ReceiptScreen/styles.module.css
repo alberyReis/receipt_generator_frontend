@@ -1,7 +1,46 @@
-.clientInfo {
+.container {
+  align-items: center;
+  background-color: var(--pinkColor);
+  color: var(--darkMediumColor);
+  display: flex;
+  font-family: var(--fontFamilySheet);
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.sheet {
+  background-color: var(--lightColor);
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  height: 58rem;
+  justify-content: space-between;
+  padding: 2.5rem;
+  width: 41rem;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 1.2rem;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.separatorLine {
+  background-color: #ccc;
+  height: 0.9rem;
+  margin-bottom: 0.9rem;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.4rem;
 }
 
 .clientSection {
@@ -12,19 +51,20 @@
   margin-bottom: 2rem;
 }
 
-.container {
-  align-items: center;
-  background-color: var(--pinkColor);
-  color: var(--darkMediumColor);
+.clientInfo {
   display: flex;
-  font-family: var(--fontFamilySheet);
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .fieldGroup {
   padding: 0.6rem 0;
+}
+
+.fieldLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .fieldLabel {
@@ -39,7 +79,7 @@
   text-align: right;
 }
 
-.fieldLabels {
+.fieldValues {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -50,25 +90,6 @@
   font-weight: 400;
   justify-self: flex-start;
   text-align: right;
-}
-
-.fieldValues {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.footer {
-  margin-top: 1.2rem;
-  text-align: center;
-}
-
-.header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  padding: 1.2rem;
 }
 
 .orderInfo {
@@ -82,18 +103,10 @@
   width: 100%;
 }
 
-.productsTable .priceColumn {
-  text-align: right;
-}
-
 .productsTable td {
   border-bottom: 0.1rem solid var(--darkMediumColor);
   padding: 0.6rem 1.2rem;
   text-align: left;
-}
-
-.productsTable tr {
-  font-size: 0.8rem;
 }
 
 .productsTable th {
@@ -103,30 +116,12 @@
   text-align: left;
 }
 
-.sheet {
-  background-color: var(--lightColor);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 58rem;
-  padding: 2.5rem;
-  width: 41rem;
+.productsTable .priceColumn {
+  text-align: right;
 }
 
-.separatorLine {
-  background-color: #ccc;
-  height: 0.9rem;
-  margin-bottom: 0.9rem;
-  width: 100%;
-}
-
-.title {
-  font-size: 2.4rem;
-}
-
-.titleContainer {
-  display: flex;
-  flex-direction: column;
+.productsTable tr {
+  font-size: 0.8rem;
 }
 
 .totalRow {
@@ -139,15 +134,43 @@
   padding: 0.6rem 1.1rem;
 }
 
+.footer {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
 @media (max-width: 31.2rem) {
-  .clientInfo {
-    gap: 0.3rem;
+  .container {
+    width: 100vw;
+  }
+
+  .sheet {
+    height: 29rem;
+    padding: 1.2rem;
+    width: 20.5rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+    padding: 0.6rem;
+  }
+
+  .header img {
+    width: 2rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
   }
 
   .clientSection {
     font-size: 0.4rem;
     gap: 1.4rem;
     margin-bottom: 1rem;
+  }
+
+  .clientInfo {
+    gap: 0.3rem;
   }
 
   .fieldGroup {
@@ -182,15 +205,6 @@
     font-size: 0.4rem;
   }
 
-  .header {
-    margin-bottom: 1rem;
-    padding: 0.6rem;
-  }
-
-  .header img {
-    width: 2rem;
-  }
-
   .productsTable {
     margin: 0.6rem auto 1.25rem;
   }
@@ -208,19 +222,9 @@
     font-size: 0.5rem;
   }
 
-  .sheet {
-    height: 29rem;
-    padding: 1.2rem;
-    width: 20.5rem;
-  }
-
   .separatorLine {
     height: 0.45rem;
     margin-bottom: 0.45rem;
-  }
-
-  .title {
-    font-size: 1.2rem;
   }
 
   .totalRow {
@@ -231,31 +235,34 @@
 
 @media print {
   @page {
-    size: auto;
     margin: 0;
+    size: auto;
   }
 
-  html, body {
+  body,
+  .container,
+  .sheet {
+    max-width: 100% !important;
+    transform: none !important;
+    width: 100% !important;
+    zoom: 1 !important;
+  }
+
+  html,
+  body {
     -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
     background: #fff;
     margin: 0;
     padding: 0;
+    print-color-adjust: exact;
     width: 100% !important;
-  }
-
-  body, .container, .sheet {
-    transform: none !important;
-    zoom: 1 !important;
-    width: 100% !important;
-    max-width: 100% !important;
   }
 
   .sheet {
-    width: 100% !important;
-    padding: 2rem !important;
     box-sizing: border-box;
     height: 100%;
+    padding: 2rem !important;
+    width: 100% !important;
   }
 
   .clientInfo {
@@ -293,8 +300,8 @@
   }
 
   .footer {
-    margin-top: 1.5rem !important;
     font-size: 1.2rem !important;
+    margin-top: 1.5rem !important;
   }
 
   .footer p {
@@ -316,8 +323,8 @@
 
   .productsTable td,
   .productsTable th {
-    padding: 1rem !important;
     font-size: 1.2rem !important;
+    padding: 1rem !important;
   }
 
   .productsTable tr {

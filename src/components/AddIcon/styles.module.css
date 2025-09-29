@@ -1,12 +1,12 @@
-img {
+.img {
     opacity: 0.6;
+}
+
+.img:active {
+    opacity: 0.4;
 }
 
 .img:hover {
     cursor: pointer;
     opacity: 0.8;
-}
-
-.img:active {
-    opacity: 0.4;
 }

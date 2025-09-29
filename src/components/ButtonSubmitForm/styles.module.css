@@ -8,12 +8,11 @@
     font-size: 1.4rem;
     font-weight: bold;
     height: 3rem;
-    justify-content: center; /* centraliza texto horizontalmente */
+    justify-content: center;
     margin-top: 2rem;
     text-align: center;
     width: 100%;
 }
-
 
 .subimt:active {
     opacity: 0.6;
