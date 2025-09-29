@@ -16,6 +16,7 @@
 @media (max-width: 31.2rem) {
     .container img {
         display: none;
+        justify-content: center;
     }
 
     .title {
