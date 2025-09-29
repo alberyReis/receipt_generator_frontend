@@ -14,12 +14,15 @@
 }
 
 @media (max-width: 31.2rem) {
-    .container img {
-        display: none;
+    .container {
         justify-content: center;
     }
 
     .title {
         text-align: center;
+    }
+
+    .container img {
+        display: none;
     }
 }
