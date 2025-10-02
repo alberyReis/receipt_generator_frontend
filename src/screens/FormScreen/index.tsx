@@ -8,147 +8,122 @@ import { ButtonSubmitForm } from '../../components/ButtonSubmitForm';
 import { InputErrorText } from '../../components/InputErrorText';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
-import type { FormattedCpfCnpj, FormValues, Product } from '../../interfaces/interfaces';
-import { validateCpfCnpj } from '../../utils/validateCpfCnpj';
 import { ContainerInputRow } from '../../components/ContainerInputRow';
+import type { FormValues, Product } from '../../interfaces/interfaces';
+import { validateCpfCnpj } from '../../utils/validateCpfCnpj';
+import { sanitizeCpfCnpj } from '../../utils/sanitizeCpfCnpj';
+import { formatCpfCnpj } from '../../utils/formatCpfCnpj';
+
+const formDataReset = {
+    receiptNumber: '',
+    formattedDate: '',
+    companyName: 'Magic Fest',
+    companyCpfOrCnpj: '',
+    clientName: '',
+    clientCpfOrCnpj: '',
+    totalProductPrice: '0,00',
+    products: []
+}
+
+const productReset = {
+    quantity: '',
+    description: '',
+    price: ''
+}
 
 export const FormScreen = () => {
     const navigate = useNavigate();
-    const [companyName, setCompanyName] = useState<string>('Magic Fest');
-    const [companyCpfOrCnpj, setCompanyCpfOrCnpj] = useState<string>('');
-    const [clientName, setClientName] = useState<string>('');
-    const [clientCpfOrCnpj, setClientCpfOrCnpj] = useState<string>('');
-    const [quantity, setQuantity] = useState<string>('');
-    const [description, setDescription] = useState<string>('');
-    const [price, setPrice] = useState<string>('');
-    const [products, setProducts] = useState<Product[]>([]);
+    const [formData, setFormData] = useState<FormValues>(formDataReset);
+    const [newProduct, setNewProduct] = useState<Product>(productReset);
     const [errorMessage, setErrorMessage] = useState<string>('');
 
     const isProductValid = (product: Product): boolean => {
         if (!product.quantity) {
-            setErrorMessage('A quantidade do produto não foi preenchida');
-            return false;
+            return setErrorMessage('A quantidade do produto não foi preenchida'), false;
         }
         if (isNaN(Number(product.quantity))) {
-            setErrorMessage('A quantidade aceita apenas números');
-            return false;
+            return setErrorMessage('A quantidade aceita apenas números'), false;
         }
         if (!product.description) {
-            setErrorMessage('O nome do produto não foi preenchido');
-            return false;
+            return setErrorMessage('O nome do produto não foi preenchido'), false;
         }
         if (!isNaN(Number(product.description))) {
-            setErrorMessage('O nome aceita apenas texto');
-            return false;
+            return setErrorMessage('O nome aceita apenas texto'), false;
         }
         if (product.description.length < 3) {
-            setErrorMessage('O nome deve ter ao menos 3 letras');
-            return false;
+            return setErrorMessage('O nome deve ter ao menos 3 letras'), false;
         }
         if (!product.price) {
-            setErrorMessage('O preço do produto não foi preenchido');
-            return false;
+            return setErrorMessage('O preço do produto não foi preenchido'), false;
         }
         if (isNaN(Number(product.price.replace(',', '.')))) {
-            setErrorMessage('O preço aceita apenas números');
-            return false;
+            return setErrorMessage('O preço aceita apenas números'), false;
         }
         return true;
     };
 
     const handleAddProduct = () => {
-        const newProduct: Product = { quantity, description, price };
-
         if (!isProductValid(newProduct)) return;
 
+        const updatedProducts = [...formData.products, newProduct];
+        const totalPrice = updatedProducts.reduce(
+            (acc, product) => acc + Number(product.quantity) * Number(product.price?.replace(',', '.')),
+            0
+        );
+
+        setFormData(prev => ({
+            ...prev,
+            products: updatedProducts,
+            totalProductPrice: totalPrice.toFixed(2).replace('.', ',')
+        }));
+
+        setNewProduct(productReset);
         setErrorMessage('');
-        setProducts(prev => [...prev, newProduct]);
-        setQuantity('');
-        setDescription('');
-        setPrice('');
-    };
-
-    const isNameValid = (name: string): boolean => {
-        const isNumeric = !isNaN(Number(name));
-
-        if (!name) {
-            setErrorMessage('O nome não foi preenchido');
-            return false;
-        }
-        if (isNumeric) {
-            setErrorMessage('O nome aceita apenas formato de texto');
-            return false;
-        }
-        if (name.length < 5) {
-            setErrorMessage('O nome necessita ter ao menos 5 letras');
-            return false;
-        }
-        return true;
-    };
-
-    const formatCpfCnpj = (value: string): FormattedCpfCnpj => {
-        const { value: sanitized, type, isValid } = validateCpfCnpj(value);
-
-        if (type === 'CPF' && isValid) {
-            return {
-                formattedValue: sanitized.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4'),
-                isValid: true
-            };
-        }
-
-        if (type === 'CNPJ' && isValid) {
-            return {
-                formattedValue: sanitized.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5'),
-                isValid: true
-            };
-        }
-
-        setErrorMessage('CPF ou CNPJ inválido');
-        return { formattedValue: '', isValid: false };
     };
 
     const handleSubmitForm = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!isNameValid(companyName)) return;
+        if (!formData.companyName) return setErrorMessage('O nome da empresa não foi preenchido');
 
-        let formattedCompanyCpfCnpj: FormattedCpfCnpj = { formattedValue: "", isValid: true };
-        if (companyCpfOrCnpj.trim() !== "") {
-            formattedCompanyCpfCnpj = formatCpfCnpj(companyCpfOrCnpj);
-            if (!formattedCompanyCpfCnpj.isValid) return;
+        let formattedCompanyCpfCnpj = ''
+
+        if (formData.companyCpfOrCnpj) {
+            const sanitizedCompany = sanitizeCpfCnpj(formData.companyCpfOrCnpj || '')
+            const companyValidation = validateCpfCnpj(sanitizedCompany)
+            if (!companyValidation.isValid) {
+                return setErrorMessage('CPF/CNPJ da empresa inválido')
+            }
+            formattedCompanyCpfCnpj = formatCpfCnpj(sanitizedCompany)
         }
 
-        if (!isNameValid(clientName)) return;
+        if (!formData.clientName) return setErrorMessage('O nome do cliente não foi preenchido');
 
-        const formattedClientCpfCnpj = formatCpfCnpj(clientCpfOrCnpj);
-        if (!formattedClientCpfCnpj.isValid) return;
+        const sanitizedClient = sanitizeCpfCnpj(formData.clientCpfOrCnpj || '')
+        const clientValidation = validateCpfCnpj(sanitizedClient)
+        if (!clientValidation.isValid) {
+            return setErrorMessage('CPF/CNPJ do cliente inválido')
+        }
+        const formattedClientCpfCnpj = formatCpfCnpj(sanitizedClient)
 
-        setErrorMessage('');
+        const formattedDate = new Date().toLocaleDateString('pt-BR');
 
-        const formattedDate = new Date().toLocaleDateString("pt-BR");
-        const currentReceiptNumber = Number(localStorage.getItem("receiptNumber")) || 0;
+        const currentReceiptNumber = Number(localStorage.getItem('receiptNumber')) || 0;
         const newReceiptNumber = currentReceiptNumber + 1;
-        localStorage.setItem("receiptNumber", String(newReceiptNumber));
+        localStorage.setItem('receiptNumber', String(newReceiptNumber));
 
-        const totalPrice = products.reduce((acc, p) => {
-            return acc + Number(p.quantity) * Number(p.price?.replace(",", "."));
-        }, 0);
-
-        const formValues: FormValues = {
-            receiptNumber: newReceiptNumber.toString().padStart(6, '0'),
+        const finalForm: FormValues = {
+            ...formData,
             formattedDate,
-            companyName,
-            companyCpfOrCnpj: formattedCompanyCpfCnpj.formattedValue,
-            clientName,
-            clientCpfOrCnpj: formattedClientCpfCnpj.formattedValue,
-            totalProductPrice: totalPrice.toFixed(2).replace('.', ','),
-            products,
+            receiptNumber: newReceiptNumber.toString().padStart(6, '0'),
+            companyCpfOrCnpj: formattedCompanyCpfCnpj,
+            clientCpfOrCnpj: formattedClientCpfCnpj
         };
 
-        setClientName('');
-        navigate("/receipter", { state: formValues });
-    };
+        setFormData(formDataReset);
 
+        navigate('/receipter', { state: finalForm });
+    };
 
     return (
         <div className={styles.containerFormScreen}>
@@ -156,62 +131,65 @@ export const FormScreen = () => {
             <form className={styles.formWrapper} onSubmit={handleSubmitForm}>
                 <fieldset className={styles.formFieldset}>
                     <legend className={styles.formLegend}>Preencha e crie seu recibo</legend>
+
                     <ContainerInputColumn>
                         <InputForm
                             id='companyName'
                             type='select'
                             label='Nome da Empresa'
                             placeholder='Magic Fest'
-                            value={companyName}
-                            onChange={(e) => setCompanyName(e.target.value)}
+                            value={formData.companyName}
+                            onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                             options={[
-                                { value: "Magic Fest", label: "Magic Fest" },
-                                { value: "Luana Santos de Oliveira", label: "Luana Santos de Oliveira" },
+                                { value: 'Magic Fest', label: 'Magic Fest' },
+                                { value: 'Luana Santos de Oliveira', label: 'Luana Santos de Oliveira' },
                             ]}
                         />
                         <InputForm
                             id='companyCpfOrCnpj'
                             type='text'
-                            label='CPF/CNPJ do Empresa'
+                            label='CPF/CNPJ da Empresa'
                             placeholder='000.000.000-00'
-                            value={companyCpfOrCnpj}
-                            onChange={(e) => setCompanyCpfOrCnpj(e.target.value)}
+                            value={formData.companyCpfOrCnpj}
+                            onChange={(e) => setFormData({ ...formData, companyCpfOrCnpj: e.target.value })}
                         />
                     </ContainerInputColumn>
+
                     <ContainerInputColumn>
                         <InputForm
                             id='clientName'
                             type='text'
                             label='Nome do Cliente'
-                            placeholder='Magic Fest'
-                            value={clientName}
-                            onChange={(e) => setClientName(e.target.value)}
+                            placeholder='Cliente'
+                            value={formData.clientName}
+                            onChange={(e) => setFormData({ ...formData, clientName: e.target.value })}
                         />
                         <InputForm
                             id='clientCpfOrCnpj'
                             type='text'
                             label='CPF/CNPJ do Cliente'
                             placeholder='000.000.000-00'
-                            value={clientCpfOrCnpj}
-                            onChange={(e) => setClientCpfOrCnpj(e.target.value)}
+                            value={formData.clientCpfOrCnpj}
+                            onChange={(e) => setFormData({ ...formData, clientCpfOrCnpj: e.target.value })}
                         />
                     </ContainerInputColumn>
+
                     <ContainerInputRow>
                         <InputForm
                             id='quantity'
                             type='text'
                             label='Quantidade do Produto'
                             placeholder='1'
-                            value={quantity}
-                            onChange={(e) => setQuantity(e.target.value)}
+                            value={newProduct.quantity}
+                            onChange={(e) => setNewProduct({ ...newProduct, quantity: e.target.value })}
                         />
                         <InputForm
                             id='description'
                             type='text'
                             label='Nome do Produto'
                             placeholder='Caixa Sextavada'
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
+                            value={newProduct.description}
+                            onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })}
                         />
                         <div style={{ alignItems: 'center', display: 'flex' }}>
                             <InputForm
@@ -219,12 +197,13 @@ export const FormScreen = () => {
                                 type='text'
                                 label='Preço do Produto'
                                 placeholder='6,00'
-                                value={price}
-                                onChange={(e) => setPrice(e.target.value)}
+                                value={newProduct.price}
+                                onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
                             />
                             <AddIcon onClick={handleAddProduct} />
                         </div>
                     </ContainerInputRow>
+
                     <InputErrorText textError={errorMessage} />
                     <ButtonSubmitForm />
                 </fieldset>
