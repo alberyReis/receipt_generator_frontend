@@ -118,8 +118,10 @@ export const FormScreen = () => {
             formattedDate,
             receiptNumber: newReceiptNumber.toString().padStart(6, '0'),
             companyCpfOrCnpj: formattedCompanyCpfCnpj,
-            clientCpfOrCnpj: formattedClientCpfCnpj
+            clientCpfOrCnpj: formattedClientCpfCnpj,
         };
+
+        
 
         setFormData(formDataReset);
 

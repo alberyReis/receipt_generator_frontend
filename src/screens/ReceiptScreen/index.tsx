@@ -61,7 +61,7 @@ export const ReceiptScreen = () => {
                                 <tr key={index}>
                                     <td>{product.quantity}</td>
                                     <td>{product.description}</td>
-                                    <td className={styles.priceColumn}>R${formatCurrency(product.price!)}</td>
+                                    <td className={styles.priceColumn}>R${formatCurrency(product.price)}</td>
                                 </tr>
                             ))}
                         </tbody>

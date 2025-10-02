@@ -1,4 +1,4 @@
-export function formatCurrency(value: string): string {
+export function formatCurrency(value: string | undefined): string {
   if (!value) return ""
 
   const numberValue = Number(value.replace(",", "."))
