@@ -60,7 +60,7 @@ export const ReceiptScreen = () => {
                                 <tr key={index}>
                                     <td>{product.quantity}</td>
                                     <td>{product.description}</td>
-                                    <td className={styles.priceColumn}>R${Number(product.price).toFixed(2).replace('.', ',')}</td>
+                                    <td className={styles.priceColumn}>R${product.price}</td>
                                 </tr>
                             ))}
                         </tbody>

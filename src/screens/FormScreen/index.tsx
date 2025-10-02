@@ -198,7 +198,7 @@ export const FormScreen = () => {
                                 label='Preço do Produto'
                                 placeholder='6,00'
                                 value={newProduct.price}
-                                onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
+                                onChange={(e) => setNewProduct({ ...newProduct, price: parseFloat(e.target.value).toFixed(2).replace('.', ',') })}
                             />
                             <AddIcon onClick={handleAddProduct} />
                         </div>
