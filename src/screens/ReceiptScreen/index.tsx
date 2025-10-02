@@ -1,6 +1,7 @@
 import styles from './styles.module.css';
 import { useLocation } from 'react-router-dom';
 import type { FormValues } from '../../interfaces/interfaces';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 export const ReceiptScreen = () => {
     const location = useLocation();
@@ -60,7 +61,7 @@ export const ReceiptScreen = () => {
                                 <tr key={index}>
                                     <td>{product.quantity}</td>
                                     <td>{product.description}</td>
-                                    <td className={styles.priceColumn}>R${product.price}</td>
+                                    <td className={styles.priceColumn}>R${formatCurrency(product.price!)}</td>
                                 </tr>
                             ))}
                         </tbody>

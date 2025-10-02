@@ -13,6 +13,7 @@ import type { FormValues, Product } from '../../interfaces/interfaces';
 import { validateCpfCnpj } from '../../utils/validateCpfCnpj';
 import { sanitizeCpfCnpj } from '../../utils/sanitizeCpfCnpj';
 import { formatCpfCnpj } from '../../utils/formatCpfCnpj';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 const formDataReset = {
     receiptNumber: '',
@@ -67,14 +68,14 @@ export const FormScreen = () => {
 
         const updatedProducts = [...formData.products, newProduct];
         const totalPrice = updatedProducts.reduce(
-            (acc, product) => acc + Number(product.quantity) * Number(product.price?.replace(',', '.')),
+            (acc, product) => acc + Number(product.quantity) * Number(product.price),
             0
         );
 
         setFormData(prev => ({
             ...prev,
             products: updatedProducts,
-            totalProductPrice: totalPrice.toFixed(2).replace('.', ',')
+            totalProductPrice: formatCurrency(totalPrice.toString())
         }));
 
         setNewProduct(productReset);
@@ -198,7 +199,7 @@ export const FormScreen = () => {
                                 label='Preço do Produto'
                                 placeholder='6,00'
                                 value={newProduct.price}
-                                onChange={(e) => setNewProduct({ ...newProduct, price: parseFloat(e.target.value).toFixed(2).replace('.', ',') })}
+                                onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
                             />
                             <AddIcon onClick={handleAddProduct} />
                         </div>
