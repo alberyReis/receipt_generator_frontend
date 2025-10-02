@@ -301,6 +301,8 @@
   .footer {
     font-size: 1.2rem !important;
     margin-top: 1.5rem !important;
+    position: absolute;
+    bottom: 1rem;
   }
 
   .footer p {
