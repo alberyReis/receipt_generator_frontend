@@ -317,21 +317,21 @@
   }
 
   .productsTable {
-    margin: 1rem auto 2rem;
+    margin: 0.8rem auto 1.6rem;
   }
 
   .productsTable td,
   .productsTable th {
-    font-size: 1rem !important;
-    padding: 0.8rem !important;
+    font-size: 0.8rem !important;
+    padding: 0.6rem !important;
   }
 
   .productsTable tr {
-    font-size: 0.6rem;
+    font-size: 0.4rem;
   }
 
   .productsTable th {
-    font-size: 0.8rem;
+    font-size: 0.86rem;
   }
 
   .title {
@@ -340,12 +340,12 @@
   }
 
   .separatorLine {
-    height: 0.6rem;
-    margin-bottom: 0.9rem;
+    height: 0.4rem;
+    margin-bottom: 0.6rem;
   }
 
   .totalRow {
-    font-size: 1.4rem !important;
-    padding: 1rem !important;
+    font-size: 1rem !important;
+    padding: 0.6rem !important;
   }
 }
