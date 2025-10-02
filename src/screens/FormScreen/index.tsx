@@ -13,7 +13,6 @@ import type { FormValues, Product } from '../../interfaces/interfaces';
 import { validateCpfCnpj } from '../../utils/validateCpfCnpj';
 import { sanitizeCpfCnpj } from '../../utils/sanitizeCpfCnpj';
 import { formatCpfCnpj } from '../../utils/formatCpfCnpj';
-import { formatCurrency } from '../../utils/formatCurrency';
 
 const formDataReset = {
     receiptNumber: '',
@@ -75,7 +74,7 @@ export const FormScreen = () => {
         setFormData(prev => ({
             ...prev,
             products: updatedProducts,
-            totalProductPrice: formatCurrency(totalPrice.toString())
+            totalProductPrice: totalPrice.toString()
         }));
 
         setNewProduct(productReset);
@@ -118,10 +117,8 @@ export const FormScreen = () => {
             formattedDate,
             receiptNumber: newReceiptNumber.toString().padStart(6, '0'),
             companyCpfOrCnpj: formattedCompanyCpfCnpj,
-            clientCpfOrCnpj: formattedClientCpfCnpj,
+            clientCpfOrCnpj: formattedClientCpfCnpj
         };
-
-        
 
         setFormData(formDataReset);
 
