@@ -60,7 +60,7 @@ export const ReceiptScreen = () => {
                                 <tr key={index}>
                                     <td>{product.quantity}</td>
                                     <td>{product.description}</td>
-                                    <td className={styles.priceColumn}>R${product.price?.replace('.', ',')}</td>
+                                    <td className={styles.priceColumn}>R${Number(product.price).toFixed(2).replace('.', ',')}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -70,7 +70,6 @@ export const ReceiptScreen = () => {
                         <p>R$ {formData.totalProductPrice}</p>
                     </div>
                 </div>
-
                 <footer className={styles.footer}>
                     <p>Atenciosamente, Magic Fest</p>
                 </footer>
