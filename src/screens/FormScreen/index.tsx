@@ -67,7 +67,7 @@ export const FormScreen = () => {
 
         const updatedProducts = [...formData.products, newProduct];
         const totalPrice = updatedProducts.reduce(
-            (acc, product) => acc + Number(product.quantity) * Number(product.price),
+            (acc, product) => acc + Number(product.quantity) * Number(product.price?.replace(',', '.')),
             0
         );
 
