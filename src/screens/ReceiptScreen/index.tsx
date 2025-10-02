@@ -68,7 +68,7 @@ export const ReceiptScreen = () => {
                     </table>
                     <div className={styles.totalRow}>
                         <p>TOTAL:</p>
-                        <p>{formData.totalProductPrice}</p>
+                        <p>{formatCurrency(formData.totalProductPrice)}</p>
                     </div>
                 </div>
                 <footer className={styles.footer}>
