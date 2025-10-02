@@ -1,8 +1,9 @@
 .container {
     align-items: flex-end;
-    border: 0.2rem solid var(--pinkColor);
+    border: 0.14rem solid var(--pinkColor);
     border-radius: 0.6rem;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 0.4rem;
     padding: 1rem 1rem 0rem 1rem;
 }
