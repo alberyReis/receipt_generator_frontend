@@ -17,7 +17,7 @@ import { formatCpfCnpj } from '../../utils/formatCpfCnpj';
 const formDataReset = {
     receiptNumber: '',
     formattedDate: '',
-    companyName: '',
+    companyName: 'Magic Fest',
     companyCpfOrCnpj: '',
     clientName: '',
     clientCpfOrCnpj: '',
